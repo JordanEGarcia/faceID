@@ -1,7 +1,7 @@
 import numpy
 import cv2
 import os
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, render_template
 
 UPLOAD_FOLDER = '/img'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -15,8 +15,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def home():
     if request.method=='POST':
         return "<h1>POST</h1>"
-    if request.method=='GET':
-        return "<h1>GET</h1>"
+    else:
+        return render_template("id.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

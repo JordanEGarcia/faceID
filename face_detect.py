@@ -9,8 +9,8 @@ eye_detector  = cv2.CascadeClassifier('data/cascade/haarcascade_eye.xml')
 cap = cv2.imread('test/will_smith.jpg')
 
 
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-faces = face_detector.detectMultiScale(img, 1.3, 5)
+gray = cv2.cvtColor(cap, cv2.COLOR_BGR2GRAY)
+#faces = face_detector.detectMultiScale(img, 1.3, 5)
 
 cv2.imshow("will_smith", cap)
 
