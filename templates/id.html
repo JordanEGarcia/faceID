@@ -2,31 +2,21 @@
 {% block body %}
 <h1 class="text-center mt-5 text-dark">Celebrity Face ID</h1>
 
-<div class="container mt-5">
-  <form action="#" method="post">
-    <div class="p-2 bg-white rounded rounded-pill shadow-sm border mb-4">
-      <div class="input-group">
-        <input type="search" name="search" placeholder="Please Upload an image" aria-describedby="button-addon1" class="form-control border-0 bg-white">
-        <div class="input-group-append">
-          <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-    </div>
-  </form>
+<div class="container pt-5" >
+  <div class="row">
   <!-- End -->
-  <form action="/" method="POST" enctype="multipart/form-data">
-
+    <form method=post enctype=multipart/form-data>
     <div class="form-group">
       <label>Select image</label>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" name="image" id="image">
-        <label class="custom-file-label" for="image">Select image...</label>
+      <input type=file name=file>
+      <input type=submit value=Upload>
       </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Upload</button>
-
   </form>
+  {%for msg in get_flashed_messages() %}
+    <p>{{msg}} </p>
+  {% endfor %}
+</div>
 </div>
 
 <div class="container">
